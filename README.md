@@ -52,6 +52,20 @@ bash experiments/run_ablation_beta.sh
 bash experiments/run_ablation_hard_users.sh
 ```
 
+## Data Analysis and Preprocessing
+
+The notebook used to the data analysis (Section 3) can be found in `data_analysis`. Before running it, please follow these instruction to obtain the full Kuaishou dataset:
+
+```bash
+wget https://zenodo.org/records/10439422/files/KuaiRand-27K.tar.gz
+tar -xzvf KuaiRand-27K.tar.gz
+mkdir KuaiRand-Harm/data
+mv KuaiRand-27K/data/*.csv KuaiRand-Harm/data
+```
+
+Make sure to have enough space in your local machine. Remember also that the data analysis notebook is quite RAM intesive. 
+Further, you can find the notebook used to create the experimental data as `data_analysis/generate_dataset_for_training.ipynb`. However, you do not need to run it again, since the experimal data are already available within the repository. 
+
 ## Authors
 
 Giovanni De Toni, Fondazione Bruno Kessler (FBK), Trento, Italy, gdetoni@fbk.eu
