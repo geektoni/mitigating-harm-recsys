@@ -1,0 +1,19 @@
+--find-links https://download.pytorch.org/whl/torch_stable.html
+--find-links https://data.pyg.org/whl/torch-2.5.0+cu124.html
+pandas
+numpy
+scipy
+scikit-learn
+matplotlib
+seaborn
+tqdm
+torch
+torchvision
+torchaudio
+torch_geometric
+pyg_lib
+torch_scatter
+torch_sparse
+torch_cluster
+torch_spline_conv
+networkx
