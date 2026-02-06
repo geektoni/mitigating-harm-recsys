@@ -13,7 +13,7 @@ This repository contains all the data and scripts to replicate the experiments a
   - [Train the rankers](#train-the-rankers)
   - [Run again all the evaluations](#run-again-all-the-evaluations)
 - [Data Analysis and Preprocessing](#data-analysis-and-preprocessing)
-- [Cite the paper](#cite-the-paper)
+- [Cite us](#cite-us)
 - [Authors](#authors)
 
 ---
