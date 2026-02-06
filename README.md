@@ -92,7 +92,7 @@ You do **not** need to run it again, since the experimental data are already ava
 If you reuse this code, please cite our paper:
 
 ```bibtex
-@inproceedings{de2025you,
+@inproceedings{detoni2025ydbmf,
   title={You Don't Bring Me Flowers: Mitigating Unwanted Recommendations Through Conformal Risk Control},
   author={De Toni, Giovanni and Purificato, Erasmo and Gomez, Emilia and Passerini, Andrea and Lepri, Bruno and Consonni, Cristian},
   booktitle={Proceedings of the Nineteenth ACM Conference on Recommender Systems},
