@@ -42,6 +42,8 @@ If you want to replicate in full our experiments, then please do the following:
 
 ### Train the rankers
 
+**Note: if you are interested in the evaluations only, you can skip this step, as the pre-computed results are already available in `methods/kuairand/results`.**
+
 The filtered dataset are already available in `KuaiRand-Harm/training`. All the trained rankers will be saved in `methods/kuairand/results`, while the data splitting will be saved in `methods/kuairand/training` for reproducibility.
 
 You can adjust the batch size depending on the size of your GPU (see `methods/run_all.sh`).
