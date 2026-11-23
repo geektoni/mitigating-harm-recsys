@@ -23,8 +23,8 @@ This repository contains all the data and scripts to replicate the experiments a
 ```bash
 conda create --name harm-recsys python=3.10
 conda activate harm-recsys
-pip install -r requirement.txt
-````
+pip install -r requirements.txt
+```
 
 ## Replicate our results
 
@@ -46,19 +46,29 @@ If you want to replicate in full our experiments, then please do the following:
 
 The filtered dataset are already available in `KuaiRand-Harm/training`. All the trained rankers will be saved in `methods/kuairand/results`, while the data splitting will be saved in `methods/kuairand/training` for reproducibility.
 
-You can adjust the batch size depending on the size of your GPU (see `methods/run_all.sh`).
+The commands below use the same settings as `methods/run_all.sh`. GFormer is memory intensive: on smaller GPUs, reduce its `--batch-size`.
 
 ```bash
 conda activate harm-recsys
 cd methods
-python train_rec.py --model "ncf" --epochs 100 --runs 10 --gpu 1 --batch-size 8192
 python train_rec.py --model "sigformer" --epochs 100 --runs 10 --gpu 1
-python train_rec.py --model "siren" --epochs 100 --runs 10 --gpu 1 --batch-size 2048
-python train_rec.py --model "gformer" --epochs 100 --runs 10 --gpu 1 --batch-size 256
-python train_rec.py --model "lightgcl" --epochs 100 --runs 10 --gpu 1 --batch-size 2014
+python train_rec.py --model "siren" --epochs 100 --runs 10 --gpu 1 --batch-size 4096
+python train_rec.py --model "ncf" --epochs 100 --runs 10 --gpu 1 --batch-size 8192
+python train_rec.py --model "ncfharm" --epochs 100 --runs 10 --gpu 1 --batch-size 8192
+python train_rec.py --model "lightgcl" --epochs 100 --runs 10 --gpu 1 --batch-size 4096
+python train_rec.py --model "gformer" --epochs 100 --runs 10 --gpu 1 --batch-size 4096
 ```
 
 ### Run again all the evaluations
+
+The evaluation scripts read the train/test splits from `methods/kuairand/training`, which are not included in the repository. If you skipped the training step, generate them first:
+
+```bash
+conda activate harm-recsys
+cd methods
+python train_rec.py --build-only-dataset --runs 10
+cd ..
+```
 
 To run all the evaluations with the same configuration we used within our experiments, please use the following scripts:
 
